@@ -23,8 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-// catch 404 and forward to error handler
+// 当你前面的中间件都没有匹配成功时就会运行这个👇🏻
 app.use(function (req, res, next) {
     next(createError(404));
 } as RequestHandler);
